@@ -1,0 +1,133 @@
+@use './variable' as *;
+/*==========================================================
+共通
+----------------------------------------------------------*/
+.wrap_h3 {
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em 0;
+    span {
+        color: $fontGray;
+        font-size: FZ(36);
+    }
+    h2 {
+        font-size: FZ(16);
+        letter-spacing: 0.08em;
+    }
+}
+
+/*==========================================================
+HERO
+----------------------------------------------------------*/
+.container01 {
+    .box_image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1.63;
+        .item_image {
+            object-fit: cover;
+        }
+    }
+}
+
+/*==========================================================
+所長挨拶
+----------------------------------------------------------*/
+.container02 {
+    display: flex;
+    flex-direction: column;
+    padding: 4em 0 4em;
+    article {
+        display: flex;
+        gap: 0 2em;
+        margin-top: 2em;
+        align-items: flex-start;
+        .box_image {
+            position: relative;
+            width: 40%;
+            max-width: 40rem;
+            aspect-ratio: 1;
+        }
+        .box_contents {
+            flex: 1;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            padding-top: 1em;
+            h3 {
+                font-size: FZ(30);
+                color: $fontGray;
+                line-height: 1.4em;
+                letter-spacing: 0.08em;
+                margin-top: 0;
+            }
+            p {
+                font-size: FZ(16);
+                letter-spacing: 0.04em;
+                line-height: 2em;
+                margin: 3em 0 1em;
+                text-align: justify;
+            }
+            .name {
+                font-size: FZ(26);
+                letter-spacing: 0.04em;
+                align-self: flex-end;
+                margin-top: 1em;
+                span {
+                    margin-right: 0.5em;
+                    font-size: 0.6em;
+                }
+            }
+        }
+    }
+}
+/*==========================================================
+事業所について
+----------------------------------------------------------*/
+.container03 {
+    padding: 3em 0 3em;
+    article {
+        border-top: 1px solid $fontGray;
+        border-bottom: 1px solid $fontGray;
+        margin-top: 2em;
+        display: flex;
+        gap: 0 8em;
+        align-items: center;
+        padding: 1em;
+        h3 {
+            font-size: FZ(14);
+            letter-spacing: 0.08rem;
+        }
+        dl {
+            position: relative;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5em 1em;
+            & > div {
+                position: relative;
+                font-size: inherit;
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                dt,
+                dd {
+                    font-size: FZ(14);
+                    letter-spacing: 0.08em;
+                }
+                dt {
+                    text-align: justify;
+                }
+                dd {
+                    span {
+                        margin-right: 1em;
+                    }
+                    a {
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
+import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true, // ✅ HMR（ホットリロード）が正しく動作するようにする
 };
 
 export default nextConfig;
