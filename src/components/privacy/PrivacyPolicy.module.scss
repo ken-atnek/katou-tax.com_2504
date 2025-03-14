@@ -1,0 +1,39 @@
+@use 'variable' as *;
+
+.blockPrivacy {
+    font-size: inherit;
+    margin: 8em 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2em 0;
+    counter-reset: number 0;
+    li {
+        font-size: inherit;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8em 0;
+        h3 {
+            font-size: FZ(18);
+            &::before {
+                content: counter(number) '.';
+                counter-increment: number 1;
+                margin: 0.2em;
+            }
+        }
+        p {
+            font-size: FZ(14);
+            letter-spacing: 0.08em;
+            line-height: 2em;
+            text-align: justify;
+        }
+        & > div {
+            font-size: inherit;
+            margin-top: 1em;
+            h4 {
+                font-size: FZ(14);
+                letter-spacing: 0.04em;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}

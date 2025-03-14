@@ -1,21 +1,5 @@
 @use './variable' as *;
-/*==========================================================
-共通
-----------------------------------------------------------*/
-.wrap_h3 {
-    font-size: inherit;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em 0;
-    span {
-        color: $fontGray;
-        font-size: FZ(36);
-    }
-    h2 {
-        font-size: FZ(16);
-        letter-spacing: 0.08em;
-    }
-}
+
 
 /*==========================================================
 HERO
@@ -129,5 +113,111 @@ HERO
                 }
             }
         }
+    }
+}
+/*==========================================================
+私たちの強み/業務内容
+----------------------------------------------------------*/
+.container04 {
+    padding: 3em 0 3em;
+    display: flex;
+    flex-direction: column;
+    & > p {
+        font-size: FZ(14);
+        text-align: center;
+        letter-spacing: 0.08em;
+        line-height: 1.6em;
+        margin: 5em 0 3em;
+    }
+}
+/*==========================================================
+働き方、職場環境
+----------------------------------------------------------*/
+.container05 {
+    padding: 3em 0 3em;
+    display: flex;
+    flex-direction: column;
+}
+/*==========================================================
+スタッフ募集
+----------------------------------------------------------*/
+.container06 {
+    padding: 3em 0 3em;
+    display: flex;
+    flex-direction: column;
+    & > article {
+        display: flex;
+        gap: 5em;
+        margin-top: 3em;
+        align-items: flex-start;
+        .box_image {
+            position: relative;
+            aspect-ratio: 1.68;
+            width: 42%;
+            img {
+                object-fit: cover;
+            }
+        }
+        .box_contents {
+            font-size: inherit;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            h3 {
+                font-size: FZ(24);
+                line-height: 1.6em;
+                letter-spacing: 0.12em;
+            }
+            & > p {
+                font-size: FZ(14);
+                text-align: justify;
+                display: flex;
+                flex-direction: column;
+                margin-top: 1em;
+                letter-spacing: 0.08em;
+                line-height: 2em;
+                em {
+                    font-size: 1.3em;
+                    line-height: 1.8em;
+                    margin-block: 0.2em;
+                    &:first-of-type {
+                        margin-top: 1.4em;
+                        display: inline-block;
+                    }
+                }
+                span {
+                    font-size: 1.3em;
+                    margin-top: 1.4em;
+                }
+            }
+            .item_link {
+                margin-top: 3em;
+                display: flex;
+                align-self: flex-end;
+                border: 1px solid #000;
+                font-size: FZ(14);
+                padding: 1em 4em;
+                transition: 0.3s ease-out;
+                @include hover {
+                    background-color: #011e49;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .link_recruit {
+        position: relative;
+        font-size: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 2em;
+        font-size: FZ(36);
+        letter-spacing: 0.08em;
+        padding-block: 2em;
+        gap: 0.2em;
+        color: #fff;
+        background-image: linear-gradient(to bottom, #009dc1, #011e49);
     }
 }

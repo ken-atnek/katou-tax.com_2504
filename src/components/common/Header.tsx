@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import '../styles/Header.scss';
+import '@/components/common/Header.scss';
 const Header = () => {
   return (
     <header>
@@ -7,7 +7,7 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <Link href="#" className="nav-link">
+            <Link href="/" className="nav-link">
               TOP
             </Link>
           </li>
@@ -22,7 +22,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="#" className="nav-link">
+            <Link href="/recruit/" className="nav-link">
               スタッフ募集
             </Link>
           </li>

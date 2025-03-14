@@ -1,7 +1,25 @@
+/* =======================================
+ * トップページ
+ * URL: /
+ * Created: 2025-03-12
+ * ======================================= */
+import { Metadata } from 'next';
 import Image from 'next/image';
-import '../styles/home.scss';
+import Link from 'next/link';
+import heroImage from '@/assets/images/home/015-4245.webp';
+import photoKatou from '@/assets/images/home/022-4377.webp';
+import imageRecruit from '@/assets/images/home/recruit.webp';
+import ServiceList from '@/components/serviceList';
+import { commonList } from '@/data/serviceListData';
+import WorkList from '@/components/WorkList';
+import ModalGallery from '@/components/ModalGallery';
+import PieChartList from '@/components/PieChartList';
+import '@/styles/home.scss';
 
-export const metadata = {
+const metadataBase = new URL('https://katou-tax.com'); // `metadataBase` を定義
+
+export const metadata: Metadata = {
+  metadataBase,
   title: '加藤誠貴税理士事務所',
   description:
     '私たち加藤税理士事務所は、熊本県熊本市を拠点に、お客様の会社経営を支えるパートナーとして中小企業の成長・発展のお手伝いをしております。記帳代行・税務申告といった会計事務所の基本業務にとどまらず、経営分析、指導を通し 「お客様のパートナー」として企業の成長をバックアップ致します。まだまだ未熟な点もご ざいますが、今後も代表税理士をはじめ、職員一同、誠意を持って尽力して参ります。',
@@ -14,21 +32,22 @@ export default function Home() {
       <section className="container01">
         <div className="box_image">
           <Image
-            src="/images/home/015-4245.webp"
+            src={heroImage}
             alt="HERO画像"
             className="item_image"
             fill
+            priority
           />
         </div>
       </section>
       <section className="container02">
-        <div className="wrap_h3">
+        <div className="wrap_h2">
           <span>greeting</span>
-          <h2>所長挨拶</h2>
+          <h2>所長挨拶です</h2>
         </div>
         <article>
           <div className="box_image">
-            <Image src="/images/home/022-4377.webp" alt="所長 加藤誠貴" fill />
+            <Image src={photoKatou} alt="所長 加藤誠貴" fill priority />
           </div>
           <div className="box_contents">
             <span className="h4_sidebar"></span>
@@ -53,7 +72,7 @@ export default function Home() {
         </article>
       </section>
       <section className="container03">
-        <div className="wrap_h3">
+        <div className="wrap_h2">
           <span>about us</span>
           <h2>事務所について</h2>
         </div>
@@ -89,6 +108,64 @@ export default function Home() {
             </div>
           </dl>
         </article>
+      </section>
+      <section className="container04">
+        <div className="wrap_h2">
+          <span>service</span>
+          <h2>私たちの強み/業務内容</h2>
+        </div>
+        <p>
+          税務・資金はもちろん、事業計画、開業、補助金等、地元熊本の企業や事業者様の為に
+          <br />
+          税務・会計に限らず、多彩なサポートを行っていきます。
+        </p>
+        <ServiceList items={commonList} />
+      </section>
+      <section className="container05">
+        <div className="wrap_h2">
+          <span>work/office</span>
+          <h2>働き方、職場環境</h2>
+          <WorkList />
+          <ModalGallery />
+          <PieChartList />
+        </div>
+      </section>
+      <section className="container06">
+        <div className="wrap_h2">
+          <span>work/office</span>
+          <h2>スタッフ募集</h2>
+        </div>
+        <article>
+          <div className="box_image">
+            <Image
+              src={imageRecruit}
+              alt="リクルート画像"
+              fill
+              loading="lazy"
+            />
+          </div>
+          <div className="box_contents">
+            <h3>働く方のライフスタイルを尊重する税理士事務所です。</h3>
+            <p>
+              当事務所は法人から個人経営の方までまで幅広いお客様に、記帳代行・税務申告といった会計事務所の基本業務にとどまらず、経営分析、指導を通し
+              「お客様のパートナー」として企業の成長をバックアップ致します。
+              所長と女性スタッフ7名、男性スタッフ１名の和やかな雰囲気で、働く方のライフスタイルを尊重します。
+              <em>
+                「税理士でもワークライフバランスをしっかりとって、幸せな暮らしをしたい」
+              </em>
+              <em>「働きやすい職場環境、スタッフと気さくに楽しく働きたい」</em>
+              <em>「子育てをしながら充実した復職をしたい」</em>
+              <span>そんな方はぜひお待ちしております。 </span>
+            </p>
+            <Link href="#" className="item_link">
+              詳しく見る
+            </Link>
+          </div>
+        </article>
+        <Link href="#" className="link_recruit">
+          採用情報を詳しく見る
+          <span>[応募はコチラから]</span>
+        </Link>
       </section>
     </>
   );

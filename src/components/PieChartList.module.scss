@@ -1,0 +1,27 @@
+@use '/src/styles/variable' as *;
+
+.blockPieChartList {
+    position: relative;
+    width: 100%;
+    font-size: inherit;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 2em;
+    margin-top: 2em;
+    & > li {
+        position: relative;
+        display: grid;
+        font-size: inherit;
+        padding: 3em;
+        margin-bottom: 1em;
+        .boxImage {
+            position: relative;
+            aspect-ratio: 0.95;
+            width: 100%;
+            img {
+                mix-blend-mode: multiply;
+                object-position: center top;
+            }
+        }
+    }
+}

@@ -35,3 +35,21 @@ article {
     width: 100%;
     font-size: inherit;
 }
+
+/*==========================================================
+H2タイトル
+----------------------------------------------------------*/
+.wrap_h2 {
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em 0;
+    span {
+        color: $fontGray;
+        font-size: FZ(36);
+    }
+    h2 {
+        font-size: FZ(16);
+        letter-spacing: 0.08em;
+    }
+}

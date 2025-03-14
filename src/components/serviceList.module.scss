@@ -1,0 +1,38 @@
+@use '/src/styles/variable' as *;
+
+.listContainer {
+    position: relative;
+    width: 100%;
+    position: relative;
+    font-size: inherit;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 1em;
+    margin-top: 2em;
+    & > li {
+        position: relative;
+        grid-row: span 3;
+        display: grid;
+        grid-template-rows: subgrid;
+        font-size: inherit;
+        padding: 3em 2em;
+        background-color: #fff;
+        margin-bottom: 1em;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.05);
+        gap: 1em 0;
+        h3 {
+            font-size: FZ(20);
+            text-align: center;
+            letter-spacing: 0.08em;
+        }
+        .boxImage {
+            position: relative;
+            aspect-ratio: 1.58;
+        }
+        p {
+            font-size: FZ(14);
+            letter-spacing: 0.08em;
+            line-height: 2em;
+        }
+    }
+}

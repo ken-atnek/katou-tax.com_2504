@@ -1,0 +1,31 @@
+@use 'variable' as *;
+
+.companyAddress {
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em 0;
+    address {
+        font-size: FZ(14);
+        letter-spacing: 0.08em;
+    }
+    nav {
+        font-size: inherit;
+        display: flex;
+        gap: 0 1em;
+        a {
+            font-size: FZ(14);
+            letter-spacing: 0.12em;
+            &.tel {
+                &::before {
+                    content: 'TEL：';
+                }
+            }
+            &.fax {
+                &::before {
+                    content: 'FAX：';
+                }
+            }
+        }
+    }
+}
