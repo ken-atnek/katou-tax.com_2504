@@ -11,6 +11,7 @@ import photoKatou from '@/assets/images/home/022-4377.webp';
 import imageRecruit from '@/assets/images/home/recruit.webp';
 import ServiceList from '@/components/serviceList';
 import { commonList } from '@/data/serviceListData';
+import ScrollHandler from '@/components/ScrollHandler';
 import WorkList from '@/components/WorkList';
 import ModalGallery from '@/components/ModalGallery';
 import PieChartList from '@/components/PieChartList';
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <ScrollHandler />
       <section className="container01">
         <div className="box_image">
           <Image
@@ -121,7 +123,7 @@ export default function Home() {
         </p>
         <ServiceList items={commonList} />
       </section>
-      <section className="container05">
+      <section className="container05" id="containerWorkOffice">
         <div className="wrap_h2">
           <span>work/office</span>
           <h2>働き方、職場環境</h2>
@@ -157,12 +159,12 @@ export default function Home() {
               <em>「子育てをしながら充実した復職をしたい」</em>
               <span>そんな方はぜひお待ちしております。 </span>
             </p>
-            <Link href="#" className="item_link">
+            <Link href="/recruit/" className="item_link">
               詳しく見る
             </Link>
           </div>
         </article>
-        <Link href="#" className="link_recruit">
+        <Link href="/recruit/" className="link_recruit">
           採用情報を詳しく見る
           <span>[応募はコチラから]</span>
         </Link>

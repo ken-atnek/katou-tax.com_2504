@@ -12,12 +12,16 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="#" className="nav-link">
+            <Link href="/service/" className="nav-link">
               私たちの強み／業務内容
             </Link>
           </li>
           <li>
-            <Link href="#" className="nav-link">
+            <Link
+              href="/#containerWorkOffice"
+              className="nav-link"
+              scroll={false}
+            >
               働き方・職場環境
             </Link>
           </li>

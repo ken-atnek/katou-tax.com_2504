@@ -1,16 +1,17 @@
 /* =======================================
- * スタッフ募集
- * URL: /recruit
+ * 私たちの強み/業務内容
+ * URL: service/
  * Created: 2025-03-14
+ * Last updated: 2025-03-14
  * ======================================= */
-import RecruitGuidelines from '@/components/recruit/RecruitGuidelines';
-import RecruitHead from '@/components/recruit/RecruitHead';
-
-export default function RecruitPage() {
+import ServiceHead from '@/components/service/ServiceHead';
+import ServiceList from '@/components/serviceList';
+import { commonList } from '@/data/serviceListData';
+export default function PageService() {
   return (
     <>
-      <RecruitHead />
-      <RecruitGuidelines />
+      <ServiceHead />
+      <ServiceList items={commonList} />
     </>
   );
 }

@@ -1,3 +1,10 @@
+/* =======================================
+ * 私たちの強み/業務内容 画像リスト
+ * URL: /components
+ * Referenced in: /page.tsx, /service/page.tsx
+ * Created: 2025-03-13
+ * Last updated: 2025-03-14
+ * ======================================= */
 import Image from 'next/image';
 import { ListItem } from '@/data/serviceListData';
 import styles from '@components/serviceList.module.scss';

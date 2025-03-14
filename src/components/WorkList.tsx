@@ -1,7 +1,9 @@
 /* =======================================
- * [TOP] 働き方、職場環境 リスト
+ * 働き方、職場環境 リスト
  * URL: /components
+ * Referenced in: /page.tsx, 
  * Created: 2025-03-13
+ * Last updated: 2025-03-14
  * ======================================= */
 import Image from 'next/image';
 import workImage01 from '@/assets/images/work/list01.webp';
