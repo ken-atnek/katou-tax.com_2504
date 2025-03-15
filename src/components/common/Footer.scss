@@ -9,6 +9,9 @@ footer {
     padding: 3em 2vw 1em;
     border-top: 1px solid #000;
     gap: 2em 0;
+    @include sp{
+        
+    }    
     .link_privacy {
         font-size: FZ(14);
         text-align: right;

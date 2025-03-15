@@ -6,7 +6,6 @@
  * Last updated: 2025-03-14
  * ======================================= */
 import Image from 'next/image';
-import heroImage from '@/assets/images/recruit/hero.webp';
 import styles from '@components/recruit/RecruitHead.module.scss';
 const RecruitHead = () => {
   return (
@@ -16,7 +15,12 @@ const RecruitHead = () => {
         働く方のライフスタイルを尊重する税理士事務所です。
       </p>
       <div className={styles.box_image}>
-        <Image src={heroImage} alt="スタッフ募集" fill priority />
+        <Image
+          src="/images/recruit/hero.webp"
+          alt="スタッフ募集"
+          fill
+          priority
+        />
       </div>
       <p className={styles.comment}>
         当事務所は法人から個人経営の方までまで幅広いお客様に、記帳代行・税務申告といった会計事務所の基本業務にとどまらず、経営分析・指導を通して

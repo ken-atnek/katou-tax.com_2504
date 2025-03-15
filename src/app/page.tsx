@@ -3,6 +3,7 @@
  * URL: /
  * Created: 2025-03-12
  * ======================================= */
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 // import heroImage from '@/assets/images/home/015-4245.webp';
@@ -151,12 +152,31 @@ export default function Home() {
               <em>「子育てをしながら充実した復職をしたい」</em>
               <span>そんな方はぜひお待ちしております。 </span>
             </p>
-            <Link href="/recruit/" className="item_link">
+            <Link
+              href="/recruit/"
+              className="item_link"
+              prefetch={false}
+              onClick={(e) => {
+                if (process.env.NEXT_PUBLIC_USE_WINDOW_LOCATION === 'true') {
+                  e.preventDefault();
+                  window.location.href = '/recruit/';
+                }
+              }}
+            >
               詳しく見る
             </Link>
           </div>
         </article>
-        <Link href="/recruit/" className="link_recruit">
+        <Link
+          href="/recruit/"
+          className="link_recruit"
+          onClick={(e) => {
+            if (process.env.NEXT_PUBLIC_USE_WINDOW_LOCATION === 'true') {
+              e.preventDefault();
+              window.location.href = '/recruit/';
+            }
+          }}
+        >
           採用情報を詳しく見る
           <span>[応募はコチラから]</span>
         </Link>
