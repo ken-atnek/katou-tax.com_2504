@@ -2,7 +2,7 @@
 @use './variable' as *;
 
 body {
-    background-color: #f6fafc;
+    background-color: $baseWhite;
     color: $fontBlack;
     @include Serif;
     font-feature-settings: 'palt';
@@ -26,6 +26,9 @@ main {
     align-items: center;
     max-width: 108rem;
     padding: 8em 0;
+    @include sp {
+        padding: 6vw 4vw;
+    }
 }
 section {
     width: 100%;
@@ -49,9 +52,15 @@ H2タイトル
     span {
         color: $fontGray;
         font-size: FZ(36);
+        @include sp {
+            font-size: FZ(40);
+        }
     }
     h2 {
         font-size: FZ(16);
         letter-spacing: 0.08em;
+        @include sp {
+            font-size: FZ(18);
+        }
     }
 }

@@ -3,10 +3,9 @@
  * URL: /
  * Created: 2025-03-12
  * ======================================= */
-import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import heroImage from '@/assets/images/home/015-4245.webp';
+// import heroImage from '@/assets/images/home/015-4245.webp';
 import photoKatou from '@/assets/images/home/022-4377.webp';
 import imageRecruit from '@/assets/images/home/recruit.webp';
 import ServiceList from '@/components/serviceList';
@@ -17,16 +16,6 @@ import ModalGallery from '@/components/ModalGallery';
 import PieChartList from '@/components/PieChartList';
 import '@/styles/home.scss';
 
-const metadataBase = new URL('https://katou-tax.com'); // `metadataBase` を定義
-
-export const metadata: Metadata = {
-  metadataBase,
-  title: '加藤誠貴税理士事務所',
-  description:
-    '私たち加藤税理士事務所は、熊本県熊本市を拠点に、お客様の会社経営を支えるパートナーとして中小企業の成長・発展のお手伝いをしております。記帳代行・税務申告といった会計事務所の基本業務にとどまらず、経営分析、指導を通し 「お客様のパートナー」として企業の成長をバックアップ致します。まだまだ未熟な点もご ざいますが、今後も代表税理士をはじめ、職員一同、誠意を持って尽力して参ります。',
-  keywords: ['熊本 税理士', '会計事務所', '記帳代行', '企業サポート'],
-};
-
 export default function Home() {
   return (
     <>
@@ -34,22 +23,25 @@ export default function Home() {
       <section className="container01">
         <div className="box_image">
           <Image
-            src={heroImage}
+            // src={heroImage}
+            src="/images/015-4245.webp"
             alt="HERO画像"
             className="item_image"
-            fill
-            priority
+            width={1320}
+            height={810}
+            // fill
+            priority={true}
           />
         </div>
       </section>
       <section className="container02">
         <div className="wrap_h2">
           <span>greeting</span>
-          <h2>所長挨拶です</h2>
+          <h2>所長挨拶</h2>
         </div>
         <article>
           <div className="box_image">
-            <Image src={photoKatou} alt="所長 加藤誠貴" fill priority />
+            <Image src={photoKatou} alt="所長 加藤誠貴" fill loading="lazy" />
           </div>
           <div className="box_contents">
             <span className="h4_sidebar"></span>

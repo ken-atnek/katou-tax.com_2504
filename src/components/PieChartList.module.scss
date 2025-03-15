@@ -8,12 +8,20 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0 2em;
     margin-top: 2em;
+    @include sp {
+        grid-template-columns: unset;
+        grid-auto-flow: row;
+        gap: unset;
+    }
     & > li {
         position: relative;
         display: grid;
         font-size: inherit;
         padding: 3em;
         margin-bottom: 1em;
+        @include sp {
+            padding: 0;
+        }
         .boxImage {
             position: relative;
             aspect-ratio: 0.95;

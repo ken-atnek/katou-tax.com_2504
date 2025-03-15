@@ -1,6 +1,5 @@
 @use './variable' as *;
 
-
 /*==========================================================
 HERO
 ----------------------------------------------------------*/
@@ -27,11 +26,18 @@ HERO
         gap: 0 2em;
         margin-top: 2em;
         align-items: flex-start;
+        @include sp {
+            flex-direction: column;
+            gap: 4vw 0;
+        }
         .box_image {
             position: relative;
             width: 40%;
             max-width: 40rem;
             aspect-ratio: 1;
+            @include sp {
+                width: 100%;
+            }
         }
         .box_contents {
             flex: 1;
@@ -52,12 +58,18 @@ HERO
                 line-height: 2em;
                 margin: 3em 0 1em;
                 text-align: justify;
+                @include sp {
+                    font-size: FZ(20);
+                }
             }
             .name {
                 font-size: FZ(26);
                 letter-spacing: 0.04em;
                 align-self: flex-end;
                 margin-top: 1em;
+                @include sp {
+                    font-size: FZ(30);
+                }
                 span {
                     margin-right: 0.5em;
                     font-size: 0.6em;
@@ -79,9 +91,20 @@ HERO
         gap: 0 8em;
         align-items: center;
         padding: 1em;
+        @include sp {
+            flex-direction: column;
+            padding: unset;
+        }
         h3 {
             font-size: FZ(14);
             letter-spacing: 0.08rem;
+            @include sp {
+                background-color: #edf4fe;
+                display: flex;
+                width: stretch;
+                padding: 4vw 2vw;
+                border-bottom: 1px solid $fontGray;
+            }
         }
         dl {
             position: relative;
@@ -89,6 +112,10 @@ HERO
             display: grid;
             grid-template-columns: auto 1fr;
             gap: 0.5em 1em;
+            @include sp {
+                padding: 4vw 0;
+                width: stretch;
+            }
             & > div {
                 position: relative;
                 font-size: inherit;
@@ -99,11 +126,18 @@ HERO
                 dd {
                     font-size: FZ(14);
                     letter-spacing: 0.08em;
+                    @include sp {
+                        font-size: FZ(16);
+                    }
                 }
                 dt {
                     text-align: justify;
                 }
                 dd {
+                    @include sp {
+                        display: flex;
+                        flex-direction: column;
+                    }
                     span {
                         margin-right: 1em;
                     }
@@ -128,6 +162,11 @@ HERO
         letter-spacing: 0.08em;
         line-height: 1.6em;
         margin: 5em 0 3em;
+        @include sp {
+            margin: 8vw 0 6vw;
+            font-size: FZ(18);
+            line-height: 2em;
+        }
     }
 }
 /*==========================================================
@@ -150,10 +189,17 @@ HERO
         gap: 5em;
         margin-top: 3em;
         align-items: flex-start;
+        @include sp {
+            flex-direction: column;
+            gap: 4vw 0;
+        }
         .box_image {
             position: relative;
             aspect-ratio: 1.68;
             width: 42%;
+            @include sp {
+                width: 100%;
+            }
             img {
                 object-fit: cover;
             }
@@ -176,6 +222,9 @@ HERO
                 margin-top: 1em;
                 letter-spacing: 0.08em;
                 line-height: 2em;
+                @include sp {
+                    font-size: FZ(16);
+                }
                 em {
                     font-size: 1.3em;
                     line-height: 1.8em;

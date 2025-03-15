@@ -9,6 +9,11 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 0 1em;
     margin-top: 2em;
+    @include sp {
+        grid-template-columns: unset;
+        grid-auto-flow: row;
+        gap: unset;
+    }
     & > li {
         position: relative;
         grid-row: span 3;
@@ -20,10 +25,16 @@
         margin-bottom: 1em;
         box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.05);
         gap: 1em 0;
+        @include sp {
+            padding: 6vw 4vw;
+        }
         h3 {
             font-size: FZ(20);
             text-align: center;
             letter-spacing: 0.08em;
+            @include sp {
+                font-size: FZ(24);
+            }
         }
         .boxImage {
             position: relative;
@@ -33,6 +44,9 @@
             font-size: FZ(14);
             letter-spacing: 0.08em;
             line-height: 2em;
+            @include sp {
+                font-size: FZ(16);
+            }
         }
     }
 }

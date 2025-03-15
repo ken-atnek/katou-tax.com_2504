@@ -9,6 +9,11 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 0 1em;
+        @include sp {
+            grid-template-columns: unset;
+            grid-auto-flow: row;
+            gap: 4vw 0;
+        }
         & > div {
             position: relative;
             aspect-ratio: 1.5;

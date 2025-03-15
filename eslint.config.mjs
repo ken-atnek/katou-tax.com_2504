@@ -16,6 +16,7 @@ const eslintConfig = [
   {
     rules: {
       'no-console': isProd ? 'warn' : 'off', // 開発時 off、本番前 warn
+      '@next/next/no-css-tags': 'off',
     },
   },
 ];
