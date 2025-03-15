@@ -17,11 +17,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link
-              href="/#containerWorkOffice"
-              className="nav-link"
-              scroll={false}
-            >
+            <Link href="/#containerWorkOffice" className="nav-link"scroll={false}>
               働き方・職場環境
             </Link>
           </li>

@@ -2,7 +2,8 @@ import '@/styles/globals.scss';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import { Metadata } from 'next';
-
+import Head from 'next/head';
+import RemovePreload from '@/components/RemovePreload';
 const metadataBase = new URL('https://katou-tax.com'); // ✅ `metadataBase` を定義
 
 export const metadata: Metadata = {
@@ -38,7 +39,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="jp">
+      <Head>
+        <link rel="stylesheet" href="/_next/static/css/c2c3e80bdad0da6c.css" />
+        <link rel="stylesheet" href="/_next/static/css/180d79c3026c4133.css" />
+      </Head>
+
       <body>
+        <RemovePreload />
         <Header />
         <main>{children}</main>
         <Footer />

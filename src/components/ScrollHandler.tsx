@@ -1,30 +1,31 @@
-'use client'; // ✅ `client component` にする
+'use client';
 
 import { useEffect } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function ScrollHandler() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     const handleScroll = () => {
       setTimeout(() => {
-        const hash = window.location.hash;
-        if (hash) {
-          const targetId = hash.substring(1);
+        if (window.location.hash) {
+          const targetId = window.location.hash.substring(1);
           const targetElement = document.getElementById(targetId);
           if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
           }
         }
-      }, 100); // ✅ 遷移後の描画を待つ
+      }, 100);
     };
 
-    handleScroll(); // ✅ 初回実行（ページ遷移後）
+    handleScroll();
 
     return () => {};
-  }, [pathname, searchParams]); // ✅ `pathname` が変わったときにスクロールを適用
+  }, [pathname]);
 
   return null;
 }
