@@ -8,6 +8,10 @@
     address {
         font-size: FZ(14);
         letter-spacing: 0.08em;
+        @include sp {
+            display: flex;
+            flex-direction: column;
+        }
     }
     nav {
         font-size: inherit;

@@ -5,6 +5,9 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    @include sp {
+        padding-top: 14vw;
+    }
     h3 {
         font-size: FZ(24);
         letter-spacing: 0.12em;

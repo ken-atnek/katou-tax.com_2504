@@ -5,6 +5,9 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    @include sp {
+        padding-top: 14vw;
+    }
     h3 {
         font-size: FZ(24);
         letter-spacing: 0.12em;
@@ -13,6 +16,9 @@
         font-size: FZ(24);
         margin: 6em 0 3em;
         letter-spacing: 0.08em;
+        @include sp {
+            text-align: center;
+        }
     }
     .box_image {
         position: relative;

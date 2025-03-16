@@ -1,32 +1,29 @@
+/* =======================================
+ * CSSファイルのpreload削除（使用見合わせ）
+ * Referenced in: /layout.tsx,
+ * Created: 2025-03-12
+ * Last updated: 2025-03-15
+ * ======================================= */
 'use client';
-
 import { useEffect } from 'react';
 
-export default function RemovePreload() {
+const RemovePreload = () => {
   useEffect(() => {
-    const removePreloadLinks = () => {
-      document.querySelectorAll("link[rel='preload']").forEach((link) => {
-        if (link.getAttribute('href')?.includes('/_next/static/css/')) {
-          if (process.env.NODE_ENV === 'development') {
-            console.log(`Removing preload: ${link.getAttribute('href')}`); // ✅ 開発環境のみログを表示
-          }
-          link.remove();
+    setTimeout(() => {
+      // ✅ 100ms 遅延させる
+      const links = document.querySelectorAll("link[rel='preload']");
+
+      links.forEach((link) => {
+        const href = link.getAttribute('href');
+        if (href && href.endsWith('.css')) {
+          link.remove(); // ✅ `.css` のみ削除
+          console.log(`Preload removed: ${href}`); // ✅ デバッグ用ログ
         }
       });
-    };
-
-    removePreloadLinks();
-
-    const observer = new MutationObserver(() => {
-      removePreloadLinks();
-    });
-
-    observer.observe(document.head, { childList: true, subtree: true });
-
-    return () => {
-      observer.disconnect();
-    };
+    }, 100); // ✅ 100ms 遅延（必要なら増やす）
   }, []);
 
   return null;
-}
+};
+
+export default RemovePreload;

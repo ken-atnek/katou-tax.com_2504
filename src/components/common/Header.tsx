@@ -1,58 +1,54 @@
 'use client';
 import Link from 'next/link';
 import '@/components/common/Header.scss';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  // 画面サイズを判定してスマホかどうかを設定
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768); // 768px以下ならスマホ
-    };
-
-    checkMobile(); // 初回判定
-    window.addEventListener('resize', checkMobile);
-
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const closeMenu = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    // ✅ `#headerNav` 内のリンクのみ処理するように変更
-    if (!event.currentTarget.closest('#headerNav')) return;
-
-    event.preventDefault();
-    const href = event.currentTarget.getAttribute('href') || '/';
-
-    const nav = document.querySelector('#headerNav'); // ✅ `id` を指定して取得
-    if (nav) {
-      nav.classList.add('closing');
-    }
-
-    setTimeout(
-      () => {
-        setIsOpen(false);
-        if (nav) {
-          nav.classList.remove('closing');
-        }
-        window.location.href = href; // ✅ ページ遷移
-      },
-      isMobile ? 300 : 0
-    );
+  const closeMenu = () => {
+    setIsOpen(false);
   };
+  // メニューが開いている間はスクロールを防ぐ
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  // 外側をクリックしたらメニューを閉じる
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        isOpen &&
+        !document.getElementById('headerNav')?.contains(event.target as Node)
+      ) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [isOpen]);
+
   return (
     <header>
       <button
         className={`hamburgerButton ${isOpen ? 'is-open' : ''}`}
         onClick={toggleMenu}
+        aria-expanded={isOpen}
+        aria-label="メニューを開閉"
       >
         <span></span>
         <span></span>
@@ -90,6 +86,8 @@ const Header = () => {
               href="/#containerWorkOffice"
               className="nav-link"
               onClick={closeMenu}
+              prefetch={false}
+              scroll={false}
             >
               働き方・職場環境
             </Link>

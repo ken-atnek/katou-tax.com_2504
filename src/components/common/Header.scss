@@ -90,12 +90,15 @@ header {
             z-index: 10;
             background-color: $baseWhite;
             translate: 100vw;
-            transition: 0.3s ease-out;
+            transition: 0.2s ease-out;
+            opacity: 0;
             &.is-open {
                 translate: 0;
+                opacity: 1;
             }
             &.closing {
                 translate: 100vw;
+                transition: 0.5s ease-out;
             }
         }
 
