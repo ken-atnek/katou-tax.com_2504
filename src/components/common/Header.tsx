@@ -2,10 +2,12 @@
 import Link from 'next/link';
 import '@/components/common/Header.scss';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const pathname = usePathname();
+  const isTopPage = pathname === '/';
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -85,9 +87,12 @@ const Header = () => {
             <Link
               href="/#containerWorkOffice"
               className="nav-link"
-              onClick={closeMenu}
+              onClick={() => {
+                closeMenu();
+                setTimeout(() => {}, 10); // 遷移の確実性を高める
+              }}
               prefetch={false}
-              scroll={false}
+              scroll={isTopPage} // TOPページなら `scroll={true}`
             >
               働き方・職場環境
             </Link>
