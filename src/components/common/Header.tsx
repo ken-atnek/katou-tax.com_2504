@@ -109,10 +109,14 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="/"
+              href="/#containerContact"
               className="nav-link link_contact"
-              onClick={closeMenu}
+              onClick={() => {
+                closeMenu();
+                setTimeout(() => {}, 10); // 遷移の確実性を高める
+              }}
               prefetch={false}
+              scroll={isTopPage}
             >
               お問い合せ
             </Link>

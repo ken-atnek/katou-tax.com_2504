@@ -15,7 +15,8 @@
         "tabWidth": 4,
         "printWidth": 80,
         "proseWrap": "always",
-        "trimTrailingWhitespace": true
+        "trimTrailingWhitespace": true,
+        "singleQuote": false
       }
     }
   ]

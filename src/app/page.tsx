@@ -16,6 +16,7 @@ import WorkList from '@/components/WorkList';
 import ModalGallery from '@/components/ModalGallery';
 import PieChartList from '@/components/PieChartList';
 import '@/styles/home.scss';
+import ContactForm from '@/components/ContactForm';
 
 export default function Home() {
   return (
@@ -161,6 +162,13 @@ export default function Home() {
           採用情報を詳しく見る
           <span>[応募はコチラから]</span>
         </Link>
+      </section>
+      <section className="container07" id="containerContact">
+        <div className="wrap_h2">
+          <span>Contact</span>
+          <h2>業務に関するお問い合わせ</h2>
+        </div>
+        <ContactForm />
       </section>
     </>
   );
