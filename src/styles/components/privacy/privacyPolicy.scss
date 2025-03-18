@@ -1,8 +1,11 @@
-@use 'variable' as *;
+@use "variable" as *;
 
 section {
     display: flex;
     flex-direction: column;
+    @include sp {
+        padding-top: 14vw;
+    }
     h2 {
         font-size: FZ(24);
         align-self: center;

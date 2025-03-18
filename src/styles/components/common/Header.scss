@@ -1,28 +1,38 @@
-@use '/src/styles/variable' as *;
+@use "/src/styles/variable" as *;
 
 header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    translate: -50%;
     font-size: inherit;
-    width: stretch;
+    width: 100%;
     max-width: 150rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 2em 2vw;
+    z-index: 50;
+    background-color: $baseWhite;
     @include sp {
+        position: relative;
         padding: 6vw 4vw 4vw;
+        top: unset;
+        left: unset;
+        translate: unset;
     }
     .hamburgerButton {
         position: fixed;
         top: 4vw;
-        right: 4vw;
+        right: 2vw;
         width: 12vw;
         aspect-ratio: 1;
         border: solid 1px #000000;
         z-index: 100;
+        background-color: $baseWhite;
         display: none;
         @include sp {
             display: block;
-            background-color: $baseWhite;
         }
         span {
             position: absolute;

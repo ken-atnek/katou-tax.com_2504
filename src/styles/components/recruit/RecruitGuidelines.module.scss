@@ -1,4 +1,4 @@
-@use '/src/styles/variable' as *;
+@use "/src/styles/variable" as *;
 
 .container02 {
     display: flex;
@@ -37,14 +37,12 @@
                 font-size: FZ(16);
                 align-self: center;
                 letter-spacing: 0.08em;
-                background-color: #edf4fe;
-                display: flex;
-                width: stretch;
-                padding: 4vw 2vw;
-                border-bottom: 1px solid $fontGray;
-                padding: 4vw;
                 @include sp {
-                    font-size: FZ(20);
+                    border-bottom: 1px solid $fontGray;
+                    background-color: #edf4fe;
+                    display: flex;
+                    width: stretch;
+                    padding: 4vw;
                 }
             }
             & > div {
