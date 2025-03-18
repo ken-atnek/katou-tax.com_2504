@@ -7,7 +7,7 @@
  * ======================================= */
 import Image from 'next/image';
 import { ListItem } from '@/data/serviceListData';
-import styles from '@components/serviceList.module.scss';
+import styles from '@/styles/components/service/serviceList.module.scss';
 
 type ServiceListProps = {
   items: ListItem[];

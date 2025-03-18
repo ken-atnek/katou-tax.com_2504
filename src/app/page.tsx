@@ -9,7 +9,7 @@ import Link from 'next/link';
 // import heroImage from '@/assets/images/home/015-4245.webp';
 import photoKatou from '@/assets/images/home/022-4377.webp';
 import imageRecruit from '@/assets/images/home/recruit.webp';
-import ServiceList from '@/components/serviceList';
+import ServiceList from '@/components/service/serviceList';
 import { commonList } from '@/data/serviceListData';
 import ScrollHandler from '@/components/ScrollHandler';
 import WorkList from '@/components/WorkList';

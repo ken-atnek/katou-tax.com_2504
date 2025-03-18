@@ -1,8 +1,8 @@
-import serviceList01 from "@/assets/images/serviceList/01.jpg";
-import serviceList02 from "@/assets/images/serviceList/02.jpg";
-import serviceList03 from "@/assets/images/serviceList/03.jpg";
-import serviceList04 from "@/assets/images/serviceList/04.jpg";
-import serviceList05 from "@/assets/images/serviceList/05.jpg";
+import serviceList01 from "@/assets/images/serviceList/01.webp";
+import serviceList02 from "@/assets/images/serviceList/02.webp";
+import serviceList03 from "@/assets/images/serviceList/03.webp";
+import serviceList04 from "@/assets/images/serviceList/04.webp";
+import serviceList05 from "@/assets/images/serviceList/05.webp";
 import { StaticImageData } from "next/image";
 
 export type ListItem = {

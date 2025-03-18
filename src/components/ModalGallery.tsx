@@ -5,7 +5,7 @@ import img2 from '@/assets/images/work/image02.webp';
 import img3 from '@/assets/images/work/image03.webp';
 import img4 from '@/assets/images/work/image04.webp';
 import { useEffect, useState } from 'react';
-import styles from '@components/ModalGallery.module.scss';
+import styles from '@/styles/components/ModalGallery.module.scss';
 const images: StaticImageData[] = [img1, img2, img3, img4];
 
 const ModalGallery = () => {

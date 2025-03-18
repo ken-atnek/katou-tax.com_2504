@@ -6,7 +6,7 @@
  * Last updated: 2025-03-14
  * ======================================= */
 import Image from 'next/image';
-import styles from '@components/recruit/RecruitHead.module.scss';
+import styles from '@/styles/components/recruit/RecruitHead.module.scss';
 const RecruitHead = () => {
   return (
     <section className={styles.container01}>

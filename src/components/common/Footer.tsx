@@ -5,7 +5,7 @@
  * ======================================= */
 'use client';
 import Link from 'next/link';
-import '@/components/common/Footer.scss';
+import '@/styles/components/common/Footer.scss';
 import CompanyInfo from './CompanyAddress';
 
 const Footer = () => {

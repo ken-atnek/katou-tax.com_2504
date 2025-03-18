@@ -7,7 +7,7 @@
  * ======================================= */
 import { useState } from 'react';
 import Modal from '@components/Modal';
-import styles from '@components/ContactForm.module.scss';
+import styles from '@/styles/components/ContactForm.module.scss';
 
 const ContactForm = () => {
   const [name, setName] = useState('');

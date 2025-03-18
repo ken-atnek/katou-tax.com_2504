@@ -5,7 +5,7 @@
  * Last updated: 2025-03-14
  * ======================================= */
 import ServiceHead from '@/components/service/ServiceHead';
-import ServiceList from '@/components/serviceList';
+import ServiceList from '@/components/service/serviceList';
 import { commonList } from '@/data/serviceListData';
 export default function PageService() {
   return (

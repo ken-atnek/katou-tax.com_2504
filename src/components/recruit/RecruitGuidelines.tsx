@@ -5,7 +5,7 @@
  * Created: 2025-03-14
  * Last updated: 2025-03-14
  * ======================================= */
-import styles from '@components/recruit/RecruitGuidelines.module.scss';
+import styles from '@/styles/components/recruit/RecruitGuidelines.module.scss';
 const RecruitGuidelines = () => {
   return (
     <section className={styles.container02}>

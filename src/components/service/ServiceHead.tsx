@@ -5,7 +5,7 @@
  * Created: 2025-03-14
  * Last updated: 2025-03-14
  * ======================================= */
-import styles from '@components/service/ServiceHead.module.scss';
+import styles from '@/styles/components/service/ServiceHead.module.scss';
 const ServiceHead = () => {
   return (
     <section className={styles.container01}>

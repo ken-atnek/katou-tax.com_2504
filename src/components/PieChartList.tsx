@@ -9,7 +9,7 @@ import pieChartImage02 from '@/assets/images/work/pie-chart02.webp';
 import pieChartImage03 from '@/assets/images/work/pie-chart03.webp';
 import pieChartImage04 from '@/assets/images/work/pie-chart04.webp';
 
-import styles from '@components/PieChartList.module.scss';
+import styles from '@/styles/components/PieChartList.module.scss';
 import { useMemo } from 'react';
 
 const PieChartList = () => {

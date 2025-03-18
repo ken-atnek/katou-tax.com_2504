@@ -1,7 +1,7 @@
 /* =======================================
  * 働き方、職場環境 リスト
  * URL: /components
- * Referenced in: /page.tsx, 
+ * Referenced in: /page.tsx,
  * Created: 2025-03-13
  * Last updated: 2025-03-14
  * ======================================= */
@@ -9,7 +9,7 @@ import Image from 'next/image';
 import workImage01 from '@/assets/images/work/list01.webp';
 import workImage02 from '@/assets/images/work/list02.webp';
 import workImage03 from '@/assets/images/work/list03.webp';
-import styles from '@components/WorkList.module.scss';
+import styles from '@/styles/components/WorkList.module.scss';
 import { useMemo } from 'react';
 
 const WorkList = () => {

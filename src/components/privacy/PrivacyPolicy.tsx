@@ -4,7 +4,7 @@
  * Created: 2025-03-13
  * ======================================= */
 import CompanyInfo from '@/components/common/CompanyAddress';
-import styles from '@components/privacy/PrivacyPolicy.module.scss';
+import styles from '@/styles/components/privacy/PrivacyPolicy.module.scss';
 
 export default function PrivacyPolicy() {
   return (

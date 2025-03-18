@@ -4,7 +4,7 @@
  * Created: 2025-03-13
  * ======================================= */
 
-import styles from '@/components/common/companyAddress.module.scss';
+import styles from '@/styles/components/common/companyAddress.module.scss';
 export default function CompanyInfo() {
   return (
     <div className={styles.companyAddress}>

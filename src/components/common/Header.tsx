@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import '@/components/common/Header.scss';
+import '@/styles/components/common/Header.scss';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
