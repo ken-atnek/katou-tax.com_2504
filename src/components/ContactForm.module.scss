@@ -1,4 +1,5 @@
 @use "/src/styles/variable" as *;
+
 .blockForm {
     position: relative;
     font-size: inherit;
@@ -10,112 +11,138 @@
         padding-inline: unset;
         margin-top: 6vw;
     }
-    & > dl {
+    & > div {
         font-size: inherit;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 2em 0;
-        @include sp {
-            grid-template-columns: unset;
-            grid-auto-flow: row;
-        }
-        // inputタグ初期化
-        input {
-            margin: 0;
-            padding: 0;
-            background: none;
-            border: none;
-            border-radius: 0;
-            outline: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-        }
-        // textareaタグ初期化
-        textarea {
-            outline: none;
-        }
-        textarea,
-        input[type="text"],
-        input[type="email"] {
-            width: stretch;
+        p {
             font-size: FZ(18);
-            padding: 0.8em;
-            border: 1px solid #b9b9b9;
-            border-radius: 0.3rem;
-            letter-spacing: 0.04em;
-            background-color: #f8f8f8;
-            &::placeholder {
-                color: #a8a8a8;
+            margin-bottom: 2em;
+            letter-spacing: 0.08em;
+            text-align: center;
+        }
+        &.statusConfirm {
+            dl {
+                & > div {
+                    align-items: center;
+                    dt {
+                        padding-top: 0;
+                    }
+                    dd {
+                        font-size: FZ(18);
+                        border: 1px solid #b9b9b9;
+                        padding: 0.5em;
+                    }
+                }
             }
         }
-        & > div {
-            grid-column: span 2;
-            display: grid;
-            grid-template-columns: subgrid;
+        & > dl {
             font-size: inherit;
-            gap: 0 2em;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2em 0;
             @include sp {
                 grid-template-columns: unset;
                 grid-auto-flow: row;
-                grid-column: unset;
-                gap: 2vw 0;
+                gap: 4vw 0;
             }
-            dt {
+            // inputタグ初期化
+            input {
+                margin: 0;
+                padding: 0;
+                background: none;
+                border: none;
+                border-radius: 0;
+                outline: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+            // textareaタグ初期化
+            textarea {
+                outline: none;
+            }
+            textarea,
+            input[type="text"],
+            input[type="email"] {
+                width: stretch;
+                font-size: FZ(18);
+                padding: 0.8em;
+                border: 1px solid #b9b9b9;
+                border-radius: 0.3rem;
+                letter-spacing: 0.04em;
+                background-color: #f8f8f8;
+                &::placeholder {
+                    color: #a8a8a8;
+                }
+            }
+            & > div {
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                font-size: inherit;
+                gap: 0 2em;
+                @include sp {
+                    grid-template-columns: unset;
+                    grid-auto-flow: row;
+                    grid-column: unset;
+                    gap: 2vw 0;
+                }
+                dt {
+                    font-size: FZ(16);
+                    width: max-content;
+                    padding-top: 1em;
+                    @include sp {
+                        font-size: FZ(18);
+                    }
+                }
+                dd {
+                    font-size: inherit;
+                    input[type="text"],
+                    input[type="email"] {
+                        max-width: 23em;
+                        @include sp {
+                            max-width: unset;
+                        }
+                    }
+                    textarea {
+                        min-height: 6lh;
+                        field-sizing: content;
+                        line-height: 1.6em;
+                        @include sp {
+                            min-height: 10lh;
+                        }
+                    }
+                }
+            }
+        }
+
+        .box_btn {
+            font-size: inherit;
+            margin-top: 2em;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            justify-content: center;
+            font-size: 1em;
+            gap: 0 1.4em;
+            margin-top: 3em;
+            &:has(button:first-of-type:last-of-type) {
+                grid-template-columns: unset;
+            }
+            button {
+                display: grid;
+                place-items: center;
+                border: 1px solid #000;
+                width: 12em;
+                height: 2.5em;
                 font-size: FZ(16);
-                width: max-content;
-                padding-top: 1em;
+                transition: 0.3s ease-out;
                 @include sp {
                     font-size: FZ(18);
                 }
-            }
-            dd {
-                font-size: inherit;
-                input[type="text"],
-                input[type="email"] {
-                    max-width: 23em;
-                    @include sp {
-                        max-width: unset;
-                    }
+                @include hover {
+                    background-color: #011e49;
+                    color: #fff;
                 }
-                textarea {
-                    min-height: 6lh;
-                    field-sizing: content;
-                    line-height: 1.6em;
-                    @include sp {
-                        min-height: 10lh;
-                    }
-                }
-            }
-        }
-    }
-    .box_btn {
-        font-size: inherit;
-        margin-top: 2em;
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        justify-content: center;
-        font-size: 1em;
-        gap: 0 1.4em;
-        margin-top: 3em;
-        &:has(button:first-of-type:last-of-type) {
-            grid-template-columns: unset;
-        }
-        button {
-            display: grid;
-            place-items: center;
-            border: 1px solid #000;
-            width: 12em;
-            height: 2.5em;
-            font-size: FZ(16);
-            transition: 0.3s ease-out;
-            @include sp {
-                font-size: FZ(18);
-            }
-            @include hover {
-                background-color: #011e49;
-                color: #fff;
             }
         }
     }
