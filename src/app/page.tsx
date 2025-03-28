@@ -21,7 +21,7 @@ import ContactForm from '@/components/ContactForm';
 export default function Home() {
   return (
     <>
-      <ScrollHandler />
+      {/* <ScrollHandler /> */}
       <section className="container01">
         <div className="box_image">
           <Image

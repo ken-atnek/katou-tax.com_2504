@@ -1,4 +1,4 @@
-@use 'variable' as *;
+@use "variable" as *;
 
 .blockPrivacy {
     font-size: inherit;
@@ -15,7 +15,7 @@
         h3 {
             font-size: FZ(18);
             &::before {
-                content: counter(number) '.';
+                content: counter(number) ".";
                 counter-increment: number 1;
                 margin: 0.2em;
             }
