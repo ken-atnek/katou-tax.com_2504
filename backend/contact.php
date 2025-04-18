@@ -1,11 +1,13 @@
-//* =======================================
+<?php
+/* =======================================
 * お問い合せフォーム
 * URL: /backend
 * Referenced in: /page.tsx,
 * Created: 2025-03-17
 * Last updated: 2025-03-18
 * ======================================= */
-<?php
+
+
 header("Access-Control-Allow-Origin: *"); // CORS対策
 header("Content-Type: application/json");
 
