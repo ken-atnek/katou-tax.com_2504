@@ -11,7 +11,7 @@ import photoKatou from '@/assets/images/home/022-4377.webp';
 import imageRecruit from '@/assets/images/home/recruit.webp';
 import ServiceList from '@/components/service/serviceList';
 import { commonList } from '@/data/serviceListData';
-import ScrollHandler from '@/components/ScrollHandler';
+// import ScrollHandler from '@/components/ScrollHandler';
 import WorkList from '@/components/WorkList';
 import ModalGallery from '@/components/ModalGallery';
 import PieChartList from '@/components/PieChartList';

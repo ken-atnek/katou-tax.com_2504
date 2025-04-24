@@ -4,7 +4,7 @@
 * URL: /backend
 * Referenced in: /page.tsx,
 * Created: 2025-03-17
-* Last updated: 2025-03-18
+* Last updated: 2025-04-24
 * ======================================= */
 
 
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 
 	// 📩 **メールの設定**
-	$to = "ken@ikc-s.ne.jp";
+	$to = "ken.atnek@gmail.com";
 	$to_name = "加藤誠貴税理士事務所";
 	$send_date = date("Y/n/j-H:i", time());
 
@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	mb_internal_encoding('UTF-8');
 
 	// **ヘッダー作成**
-	$header_from = 'From: "' . mb_encode_mimeheader($name, 'ISO-2022-JP') . '" <' . $email . '>';
+	$header_from = 'From: "' . mb_encode_mimeheader($name, 'ISO-2022-JP') . '" <no-reply@demo-katou-tax.com.tuna-pic.co.jp>' . "\r\n";
+	$header_from .= 'Reply-To: ' . $email;
 
 	// **メール本文**
 	$subject = 'お問い合せがありました';
@@ -52,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$send_target = $to_name . ' <' . $to . '>';
 
 	// **送信**
-	$rslt = mb_send_mail($send_target, $subject, $mail_body, $header_from, "-f$email");
+	$rslt = mb_send_mail($send_target, $subject, $mail_body, $header_from, "-fno-reply@demo-katou-tax.com.tuna-pic.co.jp");
 
 	// **エンコーディングを元に戻す**
 	mb_internal_encoding($orgEncoding);

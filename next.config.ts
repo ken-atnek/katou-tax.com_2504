@@ -5,7 +5,7 @@ const isProd = process.env.NODE_ENV === "production";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   experimental: {
-    optimizeCss: false, 
+    optimizeCss: true, 
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "src/styles")], // ここでルートを設定

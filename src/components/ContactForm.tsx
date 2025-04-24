@@ -48,7 +48,7 @@ const ContactForm = () => {
 
     try {
       const response = await fetch(
-        'https://katou-tax.tuna-pic.co.jp/backend/contact.php',
+        'https://demo-katou-tax.com.tuna-pic.co.jp/backend/contact.php',
         {
           method: 'POST',
           body: formData,
@@ -56,7 +56,7 @@ const ContactForm = () => {
       );
 
       const result = await response.json();
-      console.log('サーバーレスポンス:', result);
+      // console.log('サーバーレスポンス:', result);
 
       if (result.success) {
         setStatus('');
@@ -71,6 +71,7 @@ const ContactForm = () => {
         setStatus(result.error || '送信に失敗しました。');
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('エラー:', error);
       setStatus('エラーが発生しました。');
     } finally {
