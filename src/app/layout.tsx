@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: './images/ogp.jpg',
+        url: 'https://katou-tax.com/images/ogp.jpg',
         width: 1200,
         height: 630,
         alt: '加藤誠貴税理士事務所のOGP画像',
@@ -42,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="jp">
+    <html lang="ja">
       <head>
         <meta
           name="viewport"
@@ -52,6 +52,7 @@ export default function RootLayout({
           name="format-detection"
           content="telephone=no, address=no, email=no"
         />
+        <meta name="robots" content="index, follow" />
       </head>
       <body>
         {/* <RemovePreload /> */}
