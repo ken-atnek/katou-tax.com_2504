@@ -7,7 +7,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 // import heroImage from '@/assets/images/home/015-4245.webp';
-import photoKatou from '@/assets/images/home/022-4377.webp';
+import photoKatou from '@/assets/images/home/katou.webp';
 import imageRecruit from '@/assets/images/home/recruit.webp';
 import ServiceList from '@/components/service/serviceList';
 import { commonList } from '@/data/serviceListData';
@@ -26,7 +26,7 @@ export default function Home() {
         <div className="box_image">
           <Image
             // src={heroImage}
-            src="/images/015-4245.webp"
+            src="/images/hero.webp"
             alt="HERO画像"
             className="item_image"
             width={1320}
